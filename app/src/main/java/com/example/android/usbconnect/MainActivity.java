@@ -24,7 +24,5 @@ public class MainActivity extends AppCompatActivity {
         }else{
             textView.setText("No Devices Attached!");
         }
-
-
     }
 }
