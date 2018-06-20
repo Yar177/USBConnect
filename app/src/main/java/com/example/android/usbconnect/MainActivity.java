@@ -9,6 +9,10 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView textView;
+    UsbDevice device;
+    UsbDevice device1;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,12 +21,15 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent();
 
-        UsbDevice device = (UsbDevice) intent.getParcelableExtra(UsbManager.EXTRA_DEVICE);
+        device = (UsbDevice) intent.getParcelableExtra(UsbManager.EXTRA_DEVICE);
+       int deviceId =  device.getDeviceId();
 
-        if (device != null){
+        if (deviceId != 0){
             textView.setText("Camera Attached");
         }else{
             textView.setText("No Devices Attached!");
         }
+
+
     }
 }
