@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         if (device != null){
             textView.setText("Camera Attached");
         }else{
-            textView.setText("No Devices Attached!");
+            textView.setText("No USB Devices Attached!");
         }
     }
 }
